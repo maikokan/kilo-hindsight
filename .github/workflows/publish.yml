@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: npm ci
@@ -28,6 +29,4 @@ jobs:
         run: npm run build
 
       - name: Publish to npm
-        uses: npm/publish@v3
-        with:
-          access: public
+        run: npm publish --access public
