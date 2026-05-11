@@ -6,8 +6,8 @@ on:
       - 'v*'
 
 permissions:
-  id-token: write
   contents: read
+  packages: write
 
 jobs:
   publish:
@@ -21,14 +21,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           package-manager-cache: false
 
-      - name: Debug OIDC
-        run: |
-          echo "=== npm whoami ==="
-          npm whoami 2>&1 || echo "not logged in"
-          echo ""
-          echo "=== Check .npmrc ==="
-          cat ~/.npmrc 2>&1 || echo "no .npmrc"
-
       - run: npm ci
       - run: npm run build
       - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
