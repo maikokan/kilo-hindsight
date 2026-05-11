@@ -1,0 +1,62 @@
+{
+  "name": "@maikokan/kilo-hindsight",
+  "version": "0.1.0",
+  "description": "Hindsight memory plugin for Kilo - persistent long-term memory across sessions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "keywords": [
+    "kilo",
+    "ai",
+    "memory",
+    "hindsight",
+    "agents",
+    "llm",
+    "long-term-memory",
+    "coding-agent"
+  ],
+  "author": "Michael Kan <michael@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maikokan/kilo-hindsight.git"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "@kilocode/plugin": ">=1.0.0"
+  },
+  "dependencies": {
+    "@vectorize-io/hindsight-client": "^0.4.19"
+  },
+  "devDependencies": {
+    "@kilocode/plugin": "^1.0.0",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.7.0",
+    "vitest": "^4.0.18"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "overrides": {
+    "rollup": "^4.59.0",
+    "picomatch": ">=2.3.2 <3.0.0 || >=4.0.4",
+    "vite": ">=8.0.5"
+  }
+}
