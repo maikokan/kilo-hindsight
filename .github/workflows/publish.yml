@@ -28,10 +28,6 @@ jobs:
           echo ""
           echo "=== Check .npmrc ==="
           cat ~/.npmrc 2>&1 || echo "no .npmrc"
-          echo ""
-          echo "=== npm config get //registry.npmjs.org/:_authToken ==="
-          echo "${NODE_AUTH_TOKEN:-(not set)}" | head -c 50
-          echo "..."
 
       - run: npm ci
       - run: npm run build
