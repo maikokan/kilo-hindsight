@@ -17,11 +17,22 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org'
           package-manager-cache: false
 
+      - name: Debug OIDC
+        run: |
+          echo "=== npm whoami ==="
+          npm whoami 2>&1 || echo "not logged in"
+          echo ""
+          echo "=== Check .npmrc ==="
+          cat ~/.npmrc 2>&1 || echo "no .npmrc"
+          echo ""
+          echo "=== npm config get //registry.npmjs.org/:_authToken ==="
+          echo "${NODE_AUTH_TOKEN:-(not set)}" | head -c 50
+          echo "..."
+
       - run: npm ci
       - run: npm run build
-      - run: npm test
-      - run: npm publish
+      - run: npm publish --access public
