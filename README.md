@@ -1,4 +1,8 @@
-# @kilocode/hindsight
+# @maikokan/kilo-hindsight
+
+[![npm version](https://img.shields.io/npm/v/@maikokan/kilo-hindsight)](https://www.npmjs.com/package/@maikokan/kilo-hindsight)
+[![npm downloads](https://img.shields.io/npm/dm/@maikokan/kilo-hindsight)](https://www.npmjs.com/package/@maikokan/kilo-hindsight)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Hindsight memory plugin for [Kilo](https://kilo.ai) — give your AI coding agent persistent long-term memory across sessions.
 
@@ -17,7 +21,7 @@ Add to your `kilo.json` (project) or `~/.config/kilo/kilo.json` (global):
 
 ```json
 {
-  "plugin": ["@kilocode/hindsight"]
+  "plugin": ["@maikokan/kilo-hindsight"]
 }
 ```
 
@@ -48,7 +52,7 @@ Or configure inline in `kilo.json`:
 {
   "plugin": [
     [
-      "@kilocode/hindsight",
+      "@maikokan/kilo-hindsight",
       {
         "hindsightApiUrl": "https://api.hindsight.vectorize.io",
         "hindsightApiToken": "your-api-key"
@@ -68,7 +72,7 @@ Pass options directly in `kilo.json`:
 {
   "plugin": [
     [
-      "@kilocode/hindsight",
+      "@maikokan/kilo-hindsight",
       {
         "hindsightApiUrl": "http://localhost:8888",
         "bankId": "my-project",
